@@ -10,6 +10,10 @@
         }
     ],
     "minimum-stability": "dev",
+    "scripts" : {
+      "phpcs": "phpcs",
+      "phpcbf": "phpcbf"
+    },
     "autoload": {
       "psr-4": {
         "BrainGames\\Cli\\": "src"
@@ -17,5 +21,8 @@
     },
     "require": {
       "wp-cli/php-cli-tools" : "*"
+    },
+    "require-dev": {
+      "squizlabs/php_codesniffer" : "*"
     }
 }
