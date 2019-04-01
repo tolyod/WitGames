@@ -1,28 +1,29 @@
 {
-    "name": "tolyod/project-lvl1-s470",
-    "bin": ["bin/brain-games"],
-    "description": "Apoloz brain-games",
-    "type": "library",
-    "authors": [
-        {
-            "name": "Anatoliy Poloz",
-            "email": "anatoliy.poloz@gmail.com"
-        }
-    ],
-    "minimum-stability": "dev",
-    "scripts" : {
-      "phpcs": "phpcs",
-      "phpcbf": "phpcbf"
-    },
-    "autoload": {
-      "psr-4": {
-        "BrainGames\\Cli\\": "src"
-      }
-    },
-    "require": {
-      "wp-cli/php-cli-tools" : "*"
-    },
-    "require-dev": {
-      "squizlabs/php_codesniffer" : "*"
+  "name": "tolyod/project-lvl1-s470",
+  "bin": ["bin/brain-games"],
+  "description": "Apoloz brain-games",
+  "type": "project",
+  "authors": [
+    {
+      "name": "Anatoliy Poloz",
+      "email": "anatoliy.poloz@gmail.com"
     }
+  ],
+  "keywords": ["cli", "games", "simple", "logical"],
+  "minimum-stability": "stable",
+  "scripts" : {
+    "phpcs": "phpcs",
+    "phpcbf": "phpcbf"
+  },
+  "autoload": {
+    "psr-4": {
+      "BrainGames\\Cli\\": "src"
+    }
+  },
+  "require": {
+    "wp-cli/php-cli-tools" : "*"
+  },
+  "require-dev": {
+    "squizlabs/php_codesniffer" : "*"
+  }
 }
