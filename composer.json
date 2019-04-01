@@ -1,0 +1,14 @@
+{
+    "name": "apoloz/brain-games",
+    "bin": ["bin/brain-games"],
+    "description": "Apoloz brain-games",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Anatoliy Poloz",
+            "email": "anatoliy.poloz@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}
