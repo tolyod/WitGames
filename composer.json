@@ -1,6 +1,6 @@
 {
   "name": "tolyod/project-lvl1-s470",
-  "bin": ["bin/brain-games"],
+  "bin": ["bin/brain-games", "bin/brain-even"],
   "description": "Apoloz brain-games",
   "type": "project",
   "authors": [
@@ -16,7 +16,7 @@
     "phpcbf": "phpcbf"
   },
   "autoload": {
-    "files": ["src/Cli.php"],
+    "files": ["src/Cli.php", "src/Brain-Even.php"],
     "psr-4": {
       "BrainGames\\Cli\\": "src"
     }
