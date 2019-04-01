@@ -1,5 +1,5 @@
 {
-    "name": "apoloz/brain-games",
+    "name": "tolyod/project-lvl1-s470",
     "bin": ["bin/brain-games"],
     "description": "Apoloz brain-games",
     "type": "library",
