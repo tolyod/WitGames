@@ -4,18 +4,22 @@ namespace BrainGames\Cli;
 use function \cli\line;
 use function \cli\prompt;
 
-function nextStep($name, $steps = 3)
+function isEven($num)
+{
+    return ($num % 2 === 0);
+}
+
+function nextStep($name, $steps)
 {
     if ($steps === 0) {
         line("Congratulations, %s !", $name);
         return true;
     }
 
-    $randomNum = random_int(1, 99);
-    $isRandomNumEven = ($randomNum % 2 === 0);
-    $currectAnswer = $isRandomNumEven ? "yes" : "no";
+    $question = random_int(1, 99);
+    $currectAnswer = isEven($question) ? "yes" : "no";
 
-    line("Question: %d", $randomNum);
+    line("Question: %d", $question);
     $userAnswer = prompt('Your answer');
     $isAnswerCurrect = ($currectAnswer === $userAnswer);
 
@@ -40,5 +44,5 @@ function runBrainEven()
 
     $name = prompt('May I have your name?');
     line("Hello, %s!\n", $name);
-    return nextStep($name);
+    return nextStep($name, 3);
 }
