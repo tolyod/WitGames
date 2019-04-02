@@ -1,8 +1,13 @@
 {
   "name": "tolyod/project-lvl1-s470",
-  "bin": ["bin/brain-games", "bin/brain-even"],
+  "bin": [
+    "bin/brain-games",
+    "bin/brain-even",
+    "bin/brain-calc"
+  ],
   "description": "Apoloz brain-games",
   "type": "project",
+  "license": "MIT",
   "authors": [
     {
       "name": "Anatoliy Poloz",
