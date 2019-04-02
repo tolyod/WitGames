@@ -4,7 +4,8 @@
     "bin/brain-gcd",
     "bin/brain-games",
     "bin/brain-even",
-    "bin/brain-calc"
+    "bin/brain-calc",
+    "bin/brain-progression"
   ],
   "description": "Apoloz brain-games",
   "type": "project",
@@ -33,7 +34,8 @@
       "src/games/Brain-Even.php",
       "src/Game.php",
       "src/games/Brain-Calc.php",
-      "src/games/Brain-Gcd.php"
+      "src/games/Brain-Gcd.php",
+      "src/games/Brain-Progression.php"
     ],
     "psr-4": {
       "BrainGames\\Cli\\": "src"
