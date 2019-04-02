@@ -11,7 +11,7 @@ function makeQuestion()
         0,
         10
     );
-    $ind = random_int(1, 10);
+    $ind = random_int(0, 9);
     $answer = $range[$ind];
     $range[$ind] = "..";
     $question = implode(" ", $range);
