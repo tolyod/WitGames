@@ -1,25 +1,20 @@
 <?php
-namespace BrainGames\Cli;
-
+namespace BrainGames\Cli\Game;
 use function \cli\line;
 use function \cli\prompt;
 
-function isEven($num)
+function iter($params)
 {
-    return ($num % 2 === 0);
-}
+    [$name, $steps, $ns] = $params;
 
-function nextStep($name, $steps)
-{
     if ($steps === 0) {
         line("Congratulations, %s !", $name);
         return true;
     }
+    $makeQuestion = $ns . "\makeQuestion";
+    [$question, $currectAnswer] = $makeQuestion();
 
-    $question = random_int(1, 99);
-    $currectAnswer = isEven($question) ? "yes" : "no";
-
-    line("Question: %d", $question);
+    line("Question: %s", $question);
     $userAnswer = prompt('Your answer');
     $isAnswerCurrect = ($currectAnswer === $userAnswer);
 
@@ -34,15 +29,18 @@ function nextStep($name, $steps)
     }
 
     line("Correct!");
-    return nextStep($name, $steps - 1);
+    return iter([$name, $steps - 1, $ns]);
 }
 
-function runBrainEven()
+function run($game)
 {
+    $ns = __NAMESPACE__ . "\\" . $game;
+    $rules = $ns . "\getRules";
     line('Welcome to the Brain Game!');
-    line("Answer \"yes\" if number even otherwise answer \"no\".\n");
+    line($rules());
 
     $name = prompt('May I have your name?');
     line("Hello, %s!\n", $name);
-    return nextStep($name, 3);
+
+    return iter([$name, 3, $ns]);
 }

@@ -16,7 +16,11 @@
     "phpcbf": "phpcbf"
   },
   "autoload": {
-    "files": ["src/Cli.php", "src/Brain-Even.php"],
+    "files": [
+      "src/Cli.php",
+      "src/games/Brain-Even.php",
+      "src/Game.php",
+      "src/games/Brain-Calc.php"],
     "psr-4": {
       "BrainGames\\Cli\\": "src"
     }

@@ -9,5 +9,5 @@ if (file_exists($autoloadPath1)) {
 }
 
 use function BrainGames\Cli\Game\run;
-run("BrainEven");
+run("BrainCalc");
 
