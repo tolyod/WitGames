@@ -1,6 +1,7 @@
 {
   "name": "tolyod/project-lvl1-s470",
   "bin": [
+    "bin/brain-gcd",
     "bin/brain-games",
     "bin/brain-even",
     "bin/brain-calc"
@@ -14,7 +15,13 @@
       "email": "anatoliy.poloz@gmail.com"
     }
   ],
-  "keywords": ["cli", "games", "simple", "logical"],
+  "keywords": [
+    "cli",
+    "games",
+    "simple",
+    "logical",
+    "hexlet"
+  ],
   "minimum-stability": "stable",
   "scripts" : {
     "phpcs": "phpcs",
@@ -25,7 +32,9 @@
       "src/Cli.php",
       "src/games/Brain-Even.php",
       "src/Game.php",
-      "src/games/Brain-Calc.php"],
+      "src/games/Brain-Calc.php",
+      "src/games/Brain-Gcd.php"
+    ],
     "psr-4": {
       "BrainGames\\Cli\\": "src"
     }
