@@ -1,5 +1,6 @@
 <?php
 namespace BrainGames\Cli\Game\BrainEven;
+use function BrainGames\Cli\Game\run;
 
 function isEven($num)
 {
@@ -16,4 +17,10 @@ function makeQuestion()
 function getRules()
 {
     return "Answer \"yes\" if number even otherwise answer \"no\".\n";
+}
+
+function start()
+{
+    [$game] = array_reverse(explode("\\", __NAMESPACE__));
+    run($game);
 }

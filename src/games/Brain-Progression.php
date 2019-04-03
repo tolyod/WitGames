@@ -1,25 +1,32 @@
 <?php
 namespace BrainGames\Cli\Game\BrainProgression;
+use function BrainGames\Cli\Game\run;
 
 function makeQuestion()
 {
-    $rangeStart = random_int(1, 10);
-    $rangeEnd = $rangeStart + 100;
-    $mult = random_int(1, 10);
+    $start = random_int(1, 10);
+    $end = $start + 100;
+    $multiplier = random_int(1, 10);
     $range = array_slice(
-        range($rangeStart, $rangeEnd, $mult),
+        range($start, $end, $multiplier),
         0,
         10
     );
-    $ind = random_int(0, 9);
-    $answer = $range[$ind];
-    $range[$ind] = "..";
+    $index = array_rand($range, 1);
+    $answer = strval($range[$index]);
+    $range[$index] = "..";
     $question = implode(" ", $range);
 
-    return [$question, strval($answer)];
+    return [$question, $answer];
 }
 
 function getRules()
 {
     return "What number is missing in the progression?\n";
+}
+
+function start()
+{
+    [$game] = array_reverse(explode("\\", __NAMESPACE__));
+    run($game);
 }

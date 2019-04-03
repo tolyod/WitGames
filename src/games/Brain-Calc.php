@@ -1,10 +1,11 @@
 <?php
 namespace BrainGames\Cli\Game\BrainCalc;
+use function BrainGames\Cli\Game\run;
 
 function makeQuestion()
 {
-    $cacl = function ($num1, $num2, $op) {
-        switch ($op) {
+    $calculate = function ($num1, $num2, $operation) {
+        switch ($operation) {
             case "+":
                 return $num1 + $num2;
                 break;
@@ -17,26 +18,34 @@ function makeQuestion()
         }
     };
 
-    $ops = ["+", "-", "*"];
-    $rand1 = random_int(1, 99);
-    $rand2 = random_int(1, 99);
-    $randOpIndex = random_int(0, 2);
-    $randOp = $ops[$randOpIndex];
+    $operations = ["+", "-", "*"];
+    $random1 = random_int(1, 99);
+    $random2 = random_int(1, 99);
+    $randomOperationtIndex = array_rand($operations, 1);
+    $randomOperation = $operations[$randomOperationtIndex];
     $question = sprintf(
         "%d %s %d",
-        $rand1,
-        $randOp,
-        $rand2
+        $random1,
+        $randomOperation,
+        $random2
     );
-    $answer = $cacl(
-        $rand1,
-        $rand2,
-        $randOp
+    $answer = strval(
+        $calculate(
+            $random1,
+            $random2,
+            $randomOperation
+        )
     );
-    return [$question, strval($answer)];
+    return [$question, $answer];
 }
 
 function getRules()
 {
     return "What is the result of the expression?\n";
+}
+
+function start()
+{
+    [$game] = array_reverse(explode("\\", __NAMESPACE__));
+    run($game);
 }
