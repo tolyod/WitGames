@@ -5,7 +5,8 @@
     "bin/brain-games",
     "bin/brain-even",
     "bin/brain-calc",
-    "bin/brain-progression"
+    "bin/brain-progression",
+    "bin/brain-prime"
   ],
   "description": "Apoloz brain-games",
   "type": "project",
@@ -31,11 +32,13 @@
   "autoload": {
     "files": [
       "src/Cli.php",
+      "src/data/Primes.php",
       "src/games/Even.php",
       "src/Game.php",
       "src/games/Calc.php",
       "src/games/Gcd.php",
-      "src/games/Progression.php"
+      "src/games/Progression.php",
+      "src/games/Prime.php"
     ],
     "psr-4": {
       "BrainGames\\Cli\\": "src"
