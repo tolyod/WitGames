@@ -1,10 +1,10 @@
 <?php
-namespace BrainGames\Cli\Game\BrainGcd;
+namespace BrainGames\Cli\Game\Gcd;
 use function BrainGames\Cli\Game\run;
 
-const RULES = "Find the greatest common divisor of given numbers.\n";
+const DESCRIPTIOM = "Find the greatest common divisor of given numbers.\n";
 
-function gcd($a, $b)
+function findGcd($a, $b)
 {
     return ($a % $b) ? gcd($b, $a % $b) : $b;
 }
@@ -15,12 +15,12 @@ function makeQuestionAndAnswer()
     $rand2 = random_int(1, 99);
 
     $question = sprintf("%d %d", $rand1, $rand2);
-    $answer = strval(gcd($rand1, $rand2));
+    $answer = strval(findGcd($rand1, $rand2));
     return [$question, $answer];
 }
 
 function start()
 {
     [$game] = array_reverse(explode("\\", __NAMESPACE__));
-    run($game);
+    run($game, DESCRIPTIOM);
 }

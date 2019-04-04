@@ -31,11 +31,11 @@
   "autoload": {
     "files": [
       "src/Cli.php",
-      "src/games/Brain-Even.php",
+      "src/games/Even.php",
       "src/Game.php",
-      "src/games/Brain-Calc.php",
-      "src/games/Brain-Gcd.php",
-      "src/games/Brain-Progression.php"
+      "src/games/Calc.php",
+      "src/games/Gcd.php",
+      "src/games/Progression.php"
     ],
     "psr-4": {
       "BrainGames\\Cli\\": "src"
