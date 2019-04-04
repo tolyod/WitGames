@@ -2,7 +2,9 @@
 namespace BrainGames\Cli\Game\BrainCalc;
 use function BrainGames\Cli\Game\run;
 
-function makeQuestion()
+const RULES = "What is the result of the expression?\n";
+
+function makeQuestionAndAnswer()
 {
     $calculate = function ($num1, $num2, $operation) {
         switch ($operation) {
@@ -37,11 +39,6 @@ function makeQuestion()
         )
     );
     return [$question, $answer];
-}
-
-function getRules()
-{
-    return "What is the result of the expression?\n";
 }
 
 function start()

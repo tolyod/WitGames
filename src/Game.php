@@ -3,44 +3,43 @@ namespace BrainGames\Cli\Game;
 use function \cli\line;
 use function \cli\prompt;
 
-function iter($params)
+const NUMBER_OF_ROUNDS = 3;
+
+function run($gameName)
 {
-    [$name, $steps, $ns] = $params;
+    $gameNameSpace = __NAMESPACE__ . "\\" . $gameName;
+    $gameRulesPrompt = constant($gameNameSpace . "\RULES");
+    $makeQuestionAndAnswer = $gameNameSpace . "\makeQuestionAndAnswer";
 
-    if ($steps === 0) {
-        line("Congratulations, %s !", $name);
-        return true;
-    }
-    $makeQuestion = $ns . "\makeQuestion";
-    [$question, $currectAnswer] = $makeQuestion();
-
-    line("Question: %s", $question);
-    $userAnswer = prompt('Your answer');
-    $isAnswerCurrect = ($currectAnswer === $userAnswer);
-
-    if (!$isAnswerCurrect) {
-        line(
-            "'%s' is wrong answer ;(. Correct answer was '%s'.",
-            $userAnswer,
-            $currectAnswer
-        );
-        line("Let's try again, %s!", $name);
-        return false;
-    }
-
-    line("Correct!");
-    return iter([$name, $steps - 1, $ns]);
-}
-
-function run($game)
-{
-    $ns = __NAMESPACE__ . "\\" . $game;
-    $rules = $ns . "\getRules";
     line('Welcome to the Brain Game!');
-    line($rules());
+    line($gameRulesPrompt);
+    $userName = prompt('May I have your name?');
 
-    $name = prompt('May I have your name?');
-    line("Hello, %s!\n", $name);
+    $iter = function ($leftRounds) use (&$iter, $userName, $makeQuestionAndAnswer) {
+        [$question, $currectAnswer] = $makeQuestionAndAnswer();
+        if ($leftRounds === 0) {
+            line("Congratulations, %s !", $userName);
+            return;
+        }
 
-    return iter([$name, 3, $ns]);
+        line("Question: %s", $question);
+        $userAnswer = prompt('Your answer');
+        $isAnswerCurrect = ($currectAnswer === $userAnswer);
+
+        if (!$isAnswerCurrect) {
+            line(
+                "'%s' is wrong answer ;(. Correct answer was '%s'.",
+                $userAnswer,
+                $currectAnswer
+            );
+            line("Let's try again, %s!", $userName);
+            return;
+        }
+
+        line("Correct!");
+        $iter($leftRounds - 1);
+    };
+
+    line("Hello, %s!\n", $userName);
+    return $iter(NUMBER_OF_ROUNDS);
 }
