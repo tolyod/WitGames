@@ -3,7 +3,7 @@
 [![Build Status](https://travis-ci.org/tolyod/project-lvl1-s470.svg?branch=master)](https://travis-ci.org/tolyod/project-lvl1-s470)
 
 ##
-* [Installation](#installation)
+* [Installation](#Install)
 * [brain-even](#brain-even)
 * [brain-calc](#brain-calc)
 * [brain-gcd](#brain-gcd)
@@ -13,7 +13,7 @@
 * [Thanks](#thanks)
 ##
 
-## Install
+### Install
 
 to install you need to use _composer_ package manager
 
