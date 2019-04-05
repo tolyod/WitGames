@@ -18,6 +18,8 @@ function makeQuestionAndAnswer()
 
 function start()
 {
-    [$game] = array_reverse(explode("\\", __NAMESPACE__));
-    run($game, DESCRIPTIOM);
+    run(
+        DESCRIPTIOM,
+        "BrainGames\Cli\Game\Even\makeQuestionAndAnswer"
+    );
 }

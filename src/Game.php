@@ -5,13 +5,10 @@ use function \cli\prompt;
 
 const NUMBER_OF_ROUNDS = 3;
 
-function run($gameName, $gameRules)
+function run($description, $makeQuestionAndAnswer)
 {
-    $gameNameSpace = __NAMESPACE__ . "\\" . $gameName;
-    $makeQuestionAndAnswer = $gameNameSpace . "\makeQuestionAndAnswer";
-
     line('Welcome to the Brain Game!');
-    line($gameRules);
+    line($description);
     $userName = prompt('May I have your name?');
 
     $iter = function ($leftRounds) use (&$iter, $userName, $makeQuestionAndAnswer) {

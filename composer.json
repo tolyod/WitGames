@@ -32,7 +32,6 @@
   "autoload": {
     "files": [
       "src/Cli.php",
-      "src/data/Primes.php",
       "src/games/Even.php",
       "src/Game.php",
       "src/games/Calc.php",

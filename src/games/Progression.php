@@ -21,7 +21,7 @@ function makeProgressionSequence()
 function makeQuestionAndAnswer()
 {
     $sequence = makeProgressionSequence();
-    $indexOfQuestionItem = array_rand($sequence, 1);
+    $indexOfQuestionItem = array_rand($sequence);
     $answer = strval($sequence[$indexOfQuestionItem]);
     $sequence[$indexOfQuestionItem] = "..";
     $question = implode(" ", $sequence);
@@ -31,6 +31,8 @@ function makeQuestionAndAnswer()
 
 function start()
 {
-    [$game] = array_reverse(explode("\\", __NAMESPACE__));
-    run($game, DESCRIPTIOM);
+    run(
+        DESCRIPTIOM,
+        "BrainGames\Cli\Game\Progression\makeQuestionAndAnswer"
+    );
 }
