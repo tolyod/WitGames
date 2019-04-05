@@ -61,8 +61,6 @@ the game shows a random number and ask to answer is a Prime number or not
 
 ![brain-prime](https://tolyod.github.io/images/brain-prime.gif)
 
-##
-
 ## why
 
 for practice, training and study
@@ -70,5 +68,3 @@ for practice, training and study
 ## thanks
 
 to [Hexlet](https://hexlet.io) community, Kirill Mokevnin, and mentor from Hexlet for directing me to the right direction.
-
-##
