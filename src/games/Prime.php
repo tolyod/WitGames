@@ -7,10 +7,10 @@ const DESCRIPTIOM = 'Answer "yes" if given number is prime. Otherwise answer "no
 function isPrime($num)
 {
     $deviderLimit = intval(sqrt($num));
-    if ($num < 1) {
+    if ($num <= 1) {
         return false;
     }
-    for ($devider = 2; $deviderLimit > $devider; $devider++) {
+    for ($devider = 2; $deviderLimit >= $devider; $devider++) {
         if ($num % $devider === 0) {
             return false;
         }
