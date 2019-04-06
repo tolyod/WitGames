@@ -1,5 +1,5 @@
 <?php
-namespace BrainGames\Cli\Game;
+namespace BrainGames\Game;
 use function \cli\line;
 use function \cli\prompt;
 
@@ -10,6 +10,7 @@ function run($description, $makeQuestionAndAnswer)
     line('Welcome to the Brain Game!');
     line("%s \n", $description);
     $userName = prompt('May I have your name?');
+    line("Hello, %s!\n", $userName);
 
     $iter = function ($leftRounds) use (&$iter, $userName, $makeQuestionAndAnswer) {
         [$question, $currectAnswer] = $makeQuestionAndAnswer();
@@ -36,6 +37,5 @@ function run($description, $makeQuestionAndAnswer)
         $iter($leftRounds - 1);
     };
 
-    line("Hello, %s!\n", $userName);
     $iter(NUMBER_OF_ROUNDS);
 }

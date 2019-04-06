@@ -1,6 +1,6 @@
 <?php
-namespace BrainGames\Cli\Game\Progression;
-use function BrainGames\Cli\Game\run;
+namespace BrainGames\games\Progression;
+use function BrainGames\Game\run;
 
 const DESCRIPTIOM = "What number is missing in the progression?";
 const PROGRESSION_LENGTH = 10;
@@ -30,8 +30,5 @@ function start()
         return [$question, $answer];
     };
 
-    run(
-        DESCRIPTIOM,
-        $makeQuestionAndAnswer
-    );
+    run(DESCRIPTIOM, $makeQuestionAndAnswer);
 }

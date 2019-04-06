@@ -1,52 +1,51 @@
 {
-  "name": "tolyod/project-lvl1-s470",
-  "bin": [
-    "bin/brain-gcd",
-    "bin/brain-games",
-    "bin/brain-even",
-    "bin/brain-calc",
-    "bin/brain-progression",
-    "bin/brain-prime"
-  ],
-  "description": "Apoloz brain-games",
-  "type": "project",
-  "license": "MIT",
-  "authors": [
-    {
-      "name": "Anatoliy Poloz",
-      "email": "anatoliy.poloz@gmail.com"
-    }
-  ],
-  "keywords": [
-    "cli",
-    "games",
-    "simple",
-    "logical",
-    "hexlet"
-  ],
-  "minimum-stability": "stable",
-  "scripts" : {
-    "phpcs": "phpcs",
-    "phpcbf": "phpcbf"
-  },
-  "autoload": {
-    "files": [
-      "src/Cli.php",
-      "src/games/Even.php",
-      "src/Game.php",
-      "src/games/Calc.php",
-      "src/games/Gcd.php",
-      "src/games/Progression.php",
-      "src/games/Prime.php"
+    "name": "tolyod/project-lvl1-s470",
+    "bin": [
+        "bin/brain-gcd",
+        "bin/brain-games",
+        "bin/brain-even",
+        "bin/brain-calc",
+        "bin/brain-progression",
+        "bin/brain-prime"
     ],
-    "psr-4": {
-      "BrainGames\\Cli\\": "src"
+    "description": "Apoloz brain-games",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+      {
+        "name": "Anatoliy Poloz",
+        "email": "anatoliy.poloz@gmail.com"
+      }
+    ],
+    "keywords": [
+        "cli",
+        "games",
+        "simple",
+        "logical",
+        "hexlet"
+    ],
+    "scripts" : {
+        "phpcs": "phpcs",
+        "phpcbf": "phpcbf"
+    },
+    "autoload": {
+        "files": [
+          "src/Cli.php",
+          "src/games/Even.php",
+          "src/Game.php",
+          "src/games/Calc.php",
+          "src/games/Gcd.php",
+          "src/games/Progression.php",
+          "src/games/Prime.php"
+        ],
+      "psr-4": {
+          "BrainGames\\Cli\\": "src"
+      }
+    },
+    "require": {
+        "wp-cli/php-cli-tools" : "*"
+    },
+    "require-dev": {
+        "squizlabs/php_codesniffer" : "*"
     }
-  },
-  "require": {
-    "wp-cli/php-cli-tools" : "*"
-  },
-  "require-dev": {
-    "squizlabs/php_codesniffer" : "*"
-  }
 }

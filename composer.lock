@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "7dd936f1c72a261a4600dbc8ba1551fd",
+    "content-hash": "cc4fbc8e0607b57e72a16d3f78b77b96",
     "packages": [
         {
             "name": "wp-cli/php-cli-tools",

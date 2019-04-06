@@ -1,6 +1,6 @@
 <?php
-namespace BrainGames\Cli\Game\Even;
-use function BrainGames\Cli\Game\run;
+namespace BrainGames\games\Even;
+use function BrainGames\Game\run;
 
 const DESCRIPTIOM = 'Answer "yes" if number even otherwise answer "no".';
 
@@ -17,8 +17,5 @@ function start()
         return [$question, $answer];
     };
 
-    run(
-        DESCRIPTIOM,
-        $makeQuestionAndAnswer
-    );
+    run(DESCRIPTIOM, $makeQuestionAndAnswer);
 }
