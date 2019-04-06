@@ -8,7 +8,7 @@ const NUMBER_OF_ROUNDS = 3;
 function run($description, $makeQuestionAndAnswer)
 {
     line('Welcome to the Brain Game!');
-    line($description);
+    line("%s \n", $description);
     $userName = prompt('May I have your name?');
 
     $iter = function ($leftRounds) use (&$iter, $userName, $makeQuestionAndAnswer) {
