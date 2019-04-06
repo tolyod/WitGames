@@ -21,9 +21,8 @@ function run($description, $makeQuestionAndAnswer)
 
         line("Question: %s", $question);
         $userAnswer = prompt('Your answer');
-        $isAnswerCurrect = ($currectAnswer === $userAnswer);
 
-        if (!$isAnswerCurrect) {
+        if ($currectAnswer !== $userAnswer) {
             line(
                 "'%s' is wrong answer ;(. Correct answer was '%s'.",
                 $userAnswer,

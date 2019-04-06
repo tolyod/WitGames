@@ -5,9 +5,9 @@ use function BrainGames\Game\run;
 const DESCRIPTION = "What is the result of the expression?";
 const OPERATORS = ["+", "-", "*"];
 
-function calculate($num1, $num2, $operation)
+function calculate($num1, $num2, $operator)
 {
-    switch ($operation) {
+    switch ($operator) {
         case "+":
             return $num1 + $num2;
         case "-":
@@ -22,14 +22,14 @@ function start()
     $makeQuestionAndAnswer = function () {
         $random1 = random_int(1, 99);
         $random2 = random_int(1, 99);
-        $randomOperationtIndex = array_rand(OPERATORS);
-        $randomOperation = OPERATORS[$randomOperationtIndex];
-        $question = "$random1 $randomOperation $random2";
+        $operatorIndex = array_rand(OPERATORS);
+        $operator = OPERATORS[$operatorIndex];
+        $question = "$random1 $operator $random2";
         $answer = strval(
             calculate(
                 $random1,
                 $random2,
-                $randomOperation
+                $operator
             )
         );
         return [$question, $answer];
