@@ -1,3 +1,5 @@
+# Brain Games in PHP CLI
+
 > this is a PHP project that implements simple games that run from the command line.
 
 [![Maintainability](https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability)](https://codeclimate.com/github/codeclimate/codeclimate/maintainability)
