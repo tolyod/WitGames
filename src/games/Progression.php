@@ -1,5 +1,7 @@
 <?php
+
 namespace BrainGames\games\Progression;
+
 use function BrainGames\Game\run;
 
 const DESCRIPTIOM = "What number is missing in the progression?";

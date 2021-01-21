@@ -1,5 +1,7 @@
 <?php
+
 namespace BrainGames\games\Prime;
+
 use function BrainGames\Game\run;
 
 const DESCRIPTIOM = 'Answer "yes" if given number is prime. Otherwise answer "no".';

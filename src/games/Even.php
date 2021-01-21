@@ -1,5 +1,7 @@
 <?php
+
 namespace BrainGames\games\Even;
+
 use function BrainGames\Game\run;
 
 const DESCRIPTIOM = 'Answer "yes" if number even otherwise answer "no".';

@@ -1,7 +1,9 @@
 <?php
+
 namespace BrainGames\Game;
-use function \cli\line;
-use function \cli\prompt;
+
+use function cli\line;
+use function cli\prompt;
 
 const NUMBER_OF_ROUNDS = 3;
 
